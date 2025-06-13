@@ -12,5 +12,5 @@ A C++ console game where you move through a grid world to capture all the target
 ## 🚀 Run the Game
 
 ```bash
-g++ *.cpp -0 ChaserGame.exe
+g++ *.cpp -o ChaserGame.exe
 ChaserGame.exe 10 10 6 20
