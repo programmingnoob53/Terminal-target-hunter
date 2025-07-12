@@ -6,8 +6,8 @@ namespace ChaseSpace
 {
     constexpr int NumArgs = 5;//known at compile time
     constexpr char GameEntity[5] = {'@', '#', ' ' ,'T', 'E'};//E = door
-	constexpr int ChanceMove = 70;//chance a target will move
-	constexpr int NumTargets = 10;
+    constexpr int ChanceMove = 70;//chance a target will move
+    constexpr int NumTargets = 10;
     enum GameCodes
     {
         TERMINATE,
