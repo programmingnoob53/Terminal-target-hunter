@@ -5,8 +5,9 @@
 namespace ChaseSpace
 {
     constexpr int NumArgs = 5;//known at compile time
-    constexpr int NumTargets = 9;
     constexpr char GameEntity[5] = {'@', '#', ' ' ,'T', 'E'};//E = door
+	constexpr int ChanceMove = 70;//chance a target will move
+	constexpr int NumTargets = 10;
     enum GameCodes
     {
         TERMINATE,
@@ -41,14 +42,24 @@ namespace ChaseSpace
     void VerifyArgs(int Cols, int Rows, int Energy, int NumObstacle);
     typedef GameTHings* GameRows;
     typedef GameRows* GameArray;
+	
+    void countArgs(int ArgsNum, std::string ProgramName);// count the number of arguments
+    int ConvertStr(std::string str);//convert a string number to a number
+    void VerifyArgs(int Cols, int Rows, int Energy, int NumObstacle);
+    typedef GameTHings* GameRows;
+    typedef GameRows* GameArray;
+	//a player must have the following
     struct PlayerRec
     {
+		//to reduce the number of for-loops
         int col;
         int rows;
         int Penergy;
     };
     struct DoorRec
     {
+
+		//Not required since we have one door
         int col;
         int row;
     };
@@ -65,6 +76,8 @@ namespace ChaseSpace
     void ShowWorld(World &RecWorld);
     void DeallocMem(World &RecWorld);
     void MovePlayer(World &recWorld, Pdirection edir);
+
+	void MoveTarget(World& recWorld);
 
 }
 
